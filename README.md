@@ -27,3 +27,14 @@ FUNCIONALIDAD:
  EJECUCIÓN:
   Ejecutar el siguiente comando: npm install (Se instalaran todas las dependencias que necesita el proyecto para su funcionamiento).
   Cabe aclarar que necesita tener instalado NodeJS para realizar el comando anterior.
+  
+ BASE DE DATOS:
+ Sólo contiene una tabla llamada TMAETRACAL con los siguientes campos:
+	  Cod_Trabajo
+    Mat_Trabajo 
+    Prof_Trabajo
+    Act_Trabajo
+    Des_Trabajo 
+    FeI_Trabajo 
+    FeC_Trabajo 
+    Cur_Trabajo 
