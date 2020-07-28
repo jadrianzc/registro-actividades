@@ -4,7 +4,8 @@ require('../img/task.png');
 
 const UI = require('../UI');
 
-const expresion = /^[a-zA-Z0-9\_\-\s]{5,25}$/;
+const expresion = /^[a-zA-Z\u00E0\u00FC\d\_\-\s]{5,25}$/;
+
 let campo = false;
 
 const validarForm = (e) => {
