@@ -22,4 +22,8 @@ FUNCIONALIDAD:
       Vaiida que el código exista, si no se obtienen datos el botón guardar seguira desactivado, valida los campos que esten completos, y que se haya hecho al menos un cambio en cualquier parámetro.
   *Eliminar:
     Esta interfaz es similar a la de consulta, consulta por 4 parámetos ya mencionados, pero agrega en los datos obteidos por la búsqueda un botón para eliminar.
-    Valida que al menos haya un parámetro seleccionado para buscar. 
+    Valida que al menos haya un parámetro seleccionado para buscar.
+    
+ EJECUCIÓN:
+  Ejecutar el siguiente comando: npm install (Se instalaran todas las dependencias que necesita el proyecto para su funcionamiento).
+  Cabe aclarar que necesita tener instalado NodeJS para realizar el comando anterior.
