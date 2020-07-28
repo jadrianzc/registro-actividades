@@ -1,0 +1,104 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.index-menu {
+    background-image: url('/img/WelcomeSW.png');
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+    /* left: -200px; */
+    transition: all 500ms linear;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: rgba(230, 230, 230, .9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, .3);
+    text-align: center;
+}
+
+.logo {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+#sidebar .toggle-btn {
+    position: absolute;
+    left: 230px;
+    top: 20px;
+    cursor: pointer;
+}
+
+#sidebar .toggle-btn span {
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    border: 3px solid #000;
+}
+
+.item-list {
+    color: #ffffff;
+}
+
+.item-list:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.bg-item:hover {
+    background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+}
+
+.titulo {
+    color: #a03c9b;
+}
+
+.button {
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.button-cod {
+    border: 3px solid #7a23b4;
+}
+
+.button-mat {
+    border: 3px solid #73e4de;
+}
+
+.button-cur {
+    border: 3px solid #6fdf79;
+}
+
+.button-pro {
+    border: 3px solid #c949ce;
+}
+
+.border-incorrecto {
+    border: 2px solid rgb(195, 23, 23) !important;
+}
+
+/*# sourceMappingURL=bundle.css.map*/
