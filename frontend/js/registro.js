@@ -2,6 +2,7 @@ require('../style/style.css');
 require('../img/WelcomeSW.png');
 require('../img/task.png');
 
+
 const UI = require('../UI');
 
 const expresion = /^[a-zA-Z\u00E0\u00FC\d\_\-\s]{5,25}$/;
