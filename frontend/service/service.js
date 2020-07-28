@@ -1,6 +1,6 @@
 class TrabajoService {
     constructor() {
-        this.URI = 'http://localhost:3000/api/trabajos';
+        this.URI = '/api/trabajos';
     }
 
     async getTrabajo() {
