@@ -25,8 +25,9 @@ FUNCIONALIDAD:
     Valida que al menos haya un parámetro seleccionado para buscar.
     
  EJECUCIÓN:
-  Ejecutar el siguiente comando: npm install (Se instalaran todas las dependencias que necesita el proyecto para su funcionamiento).
+  *Ejecutar el siguiente comando: npm install (Se instalaran todas las dependencias que necesita el proyecto para su funcionamiento).
   Cabe aclarar que necesita tener instalado NodeJS para realizar el comando anterior.
+  *Para ejecutar el programa usar el comando: npm run dev
   
  BASE DE DATOS:
  Sólo contiene una tabla llamada TMAETRACAL con los siguientes campos:
