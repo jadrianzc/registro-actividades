@@ -52,17 +52,17 @@
         </section>
         <section>
             <div class="container py-3 px-5 main-container">
-                <form id="actividad-form" class="main-form">
+                <form id="ForRegistro" class="main-form">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <div class="form-group" id="group-user">
-                                <label for="tarea">Nombre de tarea</label>
-                                <input type="text" class="form-control" id="tarea" placeholder="Nombre de tarea" required autofocus>
+                                <label id="LblTarea" for="TxtTarea">Nombre de tarea</label>
+                                <input type="text" class="form-control" id="TxtTarea" placeholder="Nombre de tarea" required autofocus>
                                 <p class="text-danger d-none" id="messageTarea">El campo debe de tener mínimo 5 carácteres y sólo puede contener números, letras y guiones</p>
                             </div>
                             <div class="form-group">
-                                <label for="descripcion">Descripción</label>
-                                <textarea class="form-control" id="descripcion" rows="15"></textarea>
+                                <label id="LblDescripcion" for="TxtDescripcion">Descripción</label>
+                                <textarea class="form-control" id="TxtDescripcion" rows="15"></textarea>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -70,8 +70,8 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <div class="form-group">
-                                            <label for="materia">Materia</label>
-                                            <select id="materia" class="custom-select" required>
+                                            <label id="LblMateria" for="OptMateria">Materia</label>
+                                            <select id="OptMateria" class="custom-select" required>
                                                 <option selected hidden></option>
                                                 <option value="MÉTODOS NUMÉRICOS">MÉTODOS NUMÉRICOS</option>
                                                 <option value="GESTIÓN DE CALIDAD DE SOFTWARE">GESTIÓN DE CALIDAD DE SOFTWARE</option>
@@ -84,8 +84,8 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="form-group">
-                                            <label for="curso">Curso</label>
-                                            <select id="curso" class="custom-select" required>
+                                            <label id="LblCurso" for="OptCurso">Curso</label>
+                                            <select id="OptCurso" class="custom-select" required>
                                                 <option selected hidden></option>
                                                 <option value="PRIMER SEMESTRE">PRIMER SEMESTRE</option>
                                                 <option value="SEGUNDO SEMESTRE">SEGUNDO SEMESTRE</option>
@@ -103,8 +103,8 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="docente">Nombre de Docente</label>
-                                <select id="docente" class="custom-select" required>
+                                <label id="LblDocente" for="OptDocente">Nombre de Docente</label>
+                                <select id="OptDocente" class="custom-select" required>
                                     <option selected hidden></option>
                                     <option value="JIMMY ANIBAL MOREIRA MERO">JIMMY ANIBAL MOREIRA MERO</option>
                                     <option value="WINTHER ABEL MOLINA LOOR">WINTHER ABEL MOLINA LOOR</option>
@@ -118,14 +118,14 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <div class="form-group">
-                                            <label for="fInicio">Fecha Inicio</label>
-                                            <input type="date" class="form-control" id="fInicio" min="2020-01-01" max="2020-12-31" required>
+                                            <label id="LblFechaInicio" for="TxtFechaInicio">Fecha Inicio</label>
+                                            <input type="date" class="form-control" id="TxtFechaInicio" min="2020-01-01" max="2020-12-31" required>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="form-group">
-                                            <label for="fFin">Fecha Fin</label>
-                                            <input type="date" class="form-control" id="fFin" min="2020-01-01" max="2020-12-31" required>
+                                            <label id="LblFechaFin" for="TxtFechaFin">Fecha Fin</label>
+                                            <input type="date" class="form-control" id="TxtFechaFin" min="2020-01-01" max="2020-12-31" required>
                                         </div>
                                     </div>
                                 </div>
@@ -134,12 +134,12 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6 text-center">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-outline-success">GUARDAR</button>
+                                            <button id="btnGuardar" type="submit" class="btn btn-outline-success">GUARDAR</button>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6 text-center">
                                         <div class="form-group">
-                                            <button type="button" id="borrar" class="btn btn-outline-danger">BORRAR</button>
+                                            <button id="btnBorrar" type="button" class="btn btn-outline-danger">BORRAR</button>
                                         </div>
                                     </div>
                                 </div>

@@ -30,7 +30,7 @@ class UI {
             }
         });
 
-        const tbody = document.querySelector('#table .tbody');
+        const tbody = document.querySelector('#TblDatos .tbody');
         tbody.innerHTML = '';
         tasks.forEach(task => {
             const tr = document.createElement('tr');
@@ -76,7 +76,7 @@ class UI {
             }
         });
 
-        const tbody = document.querySelector('#table .tbody');
+        const tbody = document.querySelector('#TblDatos .tbody');
         tbody.innerHTML = '';
         tasks.forEach(task => {
             const tr = document.createElement('tr');
@@ -95,36 +95,35 @@ class UI {
         })
     }
 
-    async renderTrabajoById(codigo) {
-        const tareas = await trabajoService.getTrabajoOne(codigo);
+    async renderTrabajoById(TxtCodigo) {
+        const tareas = await trabajoService.getTrabajoOne(TxtCodigo);
         const trabajos = tareas.data
-        console.log(trabajos)
 
-        const tarea = document.getElementById('tarea');
-        const descripcion = document.getElementById('descripcion');
-        const materia = document.getElementById('materia');
-        const curso = document.getElementById('curso');
-        const docente = document.getElementById('docente');
-        const fInicio = document.getElementById('fInicio');
-        const fFin = document.getElementById('fFin');
+        const TxtTarea = document.getElementById('TxtTarea');
+        const TxtDescripción = document.getElementById('TxtDescripción');
+        const OptMateria = document.getElementById('OptMateria');
+        const OptCurso = document.getElementById('OptCurso');
+        const OptDocente = document.getElementById('OptDocente');
+        const TxtFechaInicio = document.getElementById('TxtFechaInicio');
+        const TxtFechaFin = document.getElementById('TxtFechaFin');
 
         if (!trabajos) {
             this.renderMessage('El código ingresado no es correcto', 'danger');
             this.clearFormEditar();
             document.getElementById('guardar').setAttribute('disabled', 'true');
-        } else if (trabajos.cod_trabajo === codigo) {
-            tarea.value = trabajos.act_trabajo;
-            descripcion.value = trabajos.des_trabajo;
-            materia.value = trabajos.mat_trabajo;
-            curso.value = trabajos.cur_trabajo;
-            docente.value = trabajos.prof_trabajo;
-            fInicio.value = trabajos.fei_trabajo;
-            fFin.value = trabajos.fec_trabajo;
+        } else if (trabajos.cod_trabajo === TxtCodigo) {
+            TxtTarea.value = trabajos.act_trabajo;
+            TxtDescripción.value = trabajos.des_trabajo;
+            OptMateria.value = trabajos.mat_trabajo;
+            OptCurso.value = trabajos.cur_trabajo;
+            OptDocente.value = trabajos.prof_trabajo;
+            TxtFechaInicio.value = trabajos.fei_trabajo;
+            TxtFechaFin.value = trabajos.fec_trabajo;
         }
     }
 
-    async addTrabajos(trabajo) {
-        const message = await trabajoService.postTrabajo(trabajo);
+    async addTrabajos(data) {
+        const message = await trabajoService.postTrabajo(data);
         if (message === 'Actividad creada'.toUpperCase()) {
             this.renderMessage(message, 'success');
         } else {
@@ -168,20 +167,20 @@ class UI {
     }
 
     clearFormIngreso() {
-        document.getElementById('actividad-form').reset();
+        document.getElementById('ForRegistro').reset();
     }
 
     clearFormConsultar() {
-        document.getElementById('consulta-form').reset();
+        document.getElementById('ForConsultar').reset();
     }
 
     clearFormEditar() {
-        document.getElementById('consultaEdi-form').reset();
-        document.getElementById('edicion-form').reset();
+        document.getElementById('ForConsultaId').reset();
+        document.getElementById('ForEditar').reset();
     }
 
     clearFormEliminar() {
-        document.getElementById('eliminar-form').reset();
+        document.getElementById('ForEliminar').reset();
     }
 }
 

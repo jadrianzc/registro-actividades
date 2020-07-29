@@ -52,16 +52,16 @@
         </section>
         <section>
             <div class="container py-3 px-5 main-container">
-                <form id="eliminar-form" class="main-form">
+                <form id="ForEliminar" class="main-form">
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <div class="form-group">
-                                <input type="number" class="form-control text-center button button-cod" id="codigo" placeholder="Código" min="1" autofocus>
+                                <input type="number" class="form-control text-center button button-cod" id="TxtCodigo" placeholder="Código" min="1" autofocus>
                             </div>
                         </div>
                         <div class="form-group col-md-3">
                             <div class="form-group">
-                                <select id="materia" class="custom-select text-center button button-mat" required>
+                                <select id="OptMateria" class="custom-select text-center button button-mat" required>
                                     <option selected hidden>Materia</option>
                                     <option value="MÉTODOS NUMÉRICOS">MÉTODOS NUMÉRICOS</option>
                                     <option value="GESTIÓN DE CALIDAD DE SOFTWARE">GESTIÓN DE CALIDAD DE SOFTWARE</option>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <div class="form-group">
-                                <select id="curso" class="custom-select button button-cur" required>
+                                <select id="OptCurso" class="custom-select button button-cur" required>
                                     <option selected hidden>Curso</option>
                                     <option value="PRIMER SEMESTRE">PRIMER SEMESTRE</option>
                                     <option value="SEGUNDO SEMESTRE">SEGUNDO SEMESTRE</option>
@@ -91,7 +91,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <div class="form-group">
-                                <select id="profesor" class="custom-select form-control text-center button button-pro" required>
+                                <select id="OptDocente" class="custom-select form-control text-center button button-pro" required>
                                     <option selected hidden>Docente</option>
                                     <option value="JIMMY ANIBAL MOREIRA MERO">JIMMY ANIBAL MOREIRA MERO</option>
                                     <option value="WINTHER ABEL MOLINA LOOR">WINTHER ABEL MOLINA LOOR</option>
@@ -106,12 +106,12 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6 text-center">
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-success">CONSULTAR</button>
+                                        <button id="btnConsulta" type="submit" class="btn btn-success">CONSULTAR</button>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6 text-center">
                                     <div class="form-group">
-                                        <button type="button" id="borrar" class="btn btn-danger">BORRAR</button>
+                                        <button id="btnBorrar" type="button" class="btn btn-danger">BORRAR</button>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
 
         <section>
             <div class="container mt-4">
-                <table class="table" id="table">
+                <table class="table" id="TblDatos">
                     <thead class="thead-dark">
                         <tr class="text-center">
                             <th scope="col">CÓDIGO</th>

@@ -10,52 +10,48 @@ const expresion = /^[a-zA-Z\u00E0\u00FC\d\_\-\s]{5,25}$/;
 let campo = false;
 
 const validarForm = (e) => {
-    if (e.target.id === 'tarea') {
+    if (e.target.id === 'TxtTarea') {
         if (expresion.test(e.target.value)) {
-            document.getElementById('tarea').classList.remove('border-incorrecto');
+            document.getElementById('TxtTarea').classList.remove('border-incorrecto');
             document.getElementById('messageTarea').classList.remove('d-block');
             campo = true;
         } else {
-            document.getElementById('tarea').classList.add('border-incorrecto');
+            document.getElementById('TxtTarea').classList.add('border-incorrecto');
             document.getElementById('messageTarea').classList.add('d-block');
             campo = false;
         }
     };
 }
 
-document.getElementById('tarea').addEventListener('keyup', validarForm);
-document.getElementById('tarea').addEventListener('blur', validarForm);
-
-
+document.getElementById('TxtTarea').addEventListener('keyup', validarForm);
+document.getElementById('TxtTarea').addEventListener('blur', validarForm);
 
 //======================================================================================
-// DOM INDEX
+// DOM REGISTRAR
 //======================================================================================
 // Botón Enviar 
-document.getElementById('actividad-form')
+document.getElementById('ForRegistro')
     .addEventListener('submit', (e) => {
         e.preventDefault();
         console.log(campo)
         if (campo) {
-            const tarea = document.getElementById('tarea').value.toUpperCase();
-            const descripcion = document.getElementById('descripcion').value.toUpperCase();
-            const materia = document.getElementById('materia').value;
-            const curso = document.getElementById('curso').value;
-            const docente = document.getElementById('docente').value;
-            const fInicio = document.getElementById('fInicio').value;
-            const fFin = document.getElementById('fFin').value;
+            const TxtTarea = document.getElementById('TxtTarea').value.toUpperCase();
+            const TxtDescripcion = document.getElementById('TxtDescripcion').value.toUpperCase();
+            const OptMateria = document.getElementById('OptMateria').value;
+            const OptCurso = document.getElementById('OptCurso').value;
+            const OptDocente = document.getElementById('OptDocente').value;
+            const TxtFechaInicio = document.getElementById('TxtFechaInicio').value;
+            const TxtFechaFin = document.getElementById('TxtFechaFin').value;
 
             const data = {
-                "mat_trabajo": materia,
-                "prof_trabajo": docente,
-                "act_trabajo": tarea,
-                "des_trabajo": descripcion,
-                "fei_trabajo": fInicio,
-                "fec_trabajo": fFin,
-                "cur_trabajo": curso
+                "mat_trabajo": OptMateria,
+                "prof_trabajo": OptDocente,
+                "act_trabajo": TxtTarea,
+                "des_trabajo": TxtDescripcion,
+                "fei_trabajo": TxtFechaInicio,
+                "fec_trabajo": TxtFechaFin,
+                "cur_trabajo": OptCurso
             }
-
-            console.log(data)
 
             const ui = new UI();
             ui.addTrabajos(data);
@@ -66,7 +62,7 @@ document.getElementById('actividad-form')
     });
 
 // Botón Borrar
-document.getElementById('borrar')
+document.getElementById('btnBorrar')
     .addEventListener('click', (e) => {
         e.preventDefault();
 

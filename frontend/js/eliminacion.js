@@ -8,25 +8,25 @@ const UI = require('../UI');
 // DOM ELIMINACIÓN
 //======================================================================================
 // Botón Consultar
-document.getElementById('eliminar-form')
+document.getElementById('ForEliminar')
     .addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const codigo = document.getElementById('codigo').value;
-        const materia = document.getElementById('materia').value;
-        const curso = document.getElementById('curso').value;
-        const docente = document.getElementById('profesor').value;
+        const TxtCodigo = document.getElementById('TxtCodigo').value;
+        const OptMateria = document.getElementById('OptMateria').value;
+        const OptCurso = document.getElementById('OptCurso').value;
+        const OptDocente = document.getElementById('OptDocente').value;
 
-        if (!codigo && materia === 'Materia' && curso === 'Curso' && docente === 'Docente') {
+        if (!TxtCodigo && OptMateria === 'Materia' && OptCurso === 'Curso' && OptDocente === 'Docente') {
             const ui = new UI();
             ui.renderMessage('Seleccione un método de búsqueda', 'primary');
         }
 
         const data = {
-            "cod_trabajo": parseInt(codigo),
-            "mat_trabajo": materia,
-            "cur_trabajo": curso,
-            "prof_trabajo": docente,
+            "cod_trabajo": parseInt(TxtCodigo),
+            "mat_trabajo": OptMateria,
+            "cur_trabajo": OptCurso,
+            "prof_trabajo": OptDocente,
         }
 
         const ui = new UI();
@@ -34,7 +34,7 @@ document.getElementById('eliminar-form')
     });
 
 // Botón Borrar
-document.getElementById('borrar')
+document.getElementById('btnBorrar')
     .addEventListener('click', (e) => {
         e.preventDefault();
 
@@ -43,7 +43,7 @@ document.getElementById('borrar')
     });
 
 // EVENTO PARA ELIMINAR
-document.getElementById('table')
+document.getElementById('TblDatos')
     .addEventListener('click', async(e) => {
         e.preventDefault();
 
@@ -51,16 +51,16 @@ document.getElementById('table')
             const codTrabajo = e.target.getAttribute('cod_trabajo');
             const cod_trabajo = parseInt(codTrabajo);
 
-            const codigo = document.getElementById('codigo').value;
-            const materia = document.getElementById('materia').value;
-            const curso = document.getElementById('curso').value;
-            const docente = document.getElementById('profesor').value;
+            const TxtCodigo = document.getElementById('TxtCodigo').value;
+            const OptMateria = document.getElementById('OptMateria').value;
+            const OptCurso = document.getElementById('OptCurso').value;
+            const OptDocente = document.getElementById('OptDocente').value;
 
             const data = {
-                "cod_trabajo": parseInt(codigo),
-                "mat_trabajo": materia,
-                "cur_trabajo": curso,
-                "prof_trabajo": docente,
+                "cod_trabajo": parseInt(TxtCodigo),
+                "mat_trabajo": OptMateria,
+                "cur_trabajo": OptCurso,
+                "prof_trabajo": OptDocente,
             }
 
             const ui = new UI();
