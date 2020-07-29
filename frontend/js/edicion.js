@@ -1,12 +1,14 @@
 require('../style/style.css');
 require('../img/WelcomeSW.png');
 require('../img/task.png');
-
 const UI = require('../UI');
 
+// Expresión regulara para validar
 const expresion = /^[a-zA-Z\u00E0\u00FC\d\_\-\s]{5,25}$/;
+
 let campo = false;
 
+// Función que valida el campo de nombre del trabajo o actividad
 const validarForm = (e) => {
     if (e.target.id === 'TxtTarea') {
         if (expresion.test(e.target.value)) {
@@ -21,7 +23,9 @@ const validarForm = (e) => {
     };
 }
 
+// Evento de presionar una tecla y ejecuta la función de validación
 document.getElementById('TxtTarea').addEventListener('keyup', validarForm);
+// Evento de click fuera del campo y ejecuta la función de validación
 document.getElementById('TxtTarea').addEventListener('blur', validarForm);
 
 //======================================================================================
