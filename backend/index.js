@@ -1,3 +1,4 @@
+// Verificación del modo de ejecución, si es modo de desarrollo o producción
 if (process.env.NODE_ENV != 'production') {
     require('dotenv').config();
 }
