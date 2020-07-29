@@ -2,6 +2,9 @@ const TrabajoService = require('./service/service');
 const trabajoService = new TrabajoService();
 
 class UI {
+
+    // Método que ejecuta el método para obtener los datos de la clase TrabajoService 
+    // Con el fin de crear un elemento para agregarlo a una tabla
     async renderTrabajos(data) {
         const tareas = await trabajoService.getTrabajo();
         const trabajos = tareas.data
@@ -48,6 +51,8 @@ class UI {
         })
     }
 
+    // Método que ejecuta el método para obtener los datos de la clase TrabajoService 
+    // Con el fin de eliminar un elemento de la tabla
     async renderTrabajosDelete(data) {
         const tareas = await trabajoService.getTrabajo();
         const trabajos = tareas.data
@@ -95,6 +100,8 @@ class UI {
         })
     }
 
+    // Método que ejecuta el método para obtener los datos de la clase TrabajoService 
+    // Con el fin de obtener un elemento y poder mostrarlo para que el usuario lo pueda editar
     async renderTrabajoById(TxtCodigo) {
         const tareas = await trabajoService.getTrabajoOne(TxtCodigo);
         const trabajos = tareas.data
@@ -122,6 +129,8 @@ class UI {
         }
     }
 
+    // Método que ejecuta el método para obtener los datos de la clase TrabajoService 
+    // Con el fin de agregar un elemento
     async addTrabajos(data) {
         const message = await trabajoService.postTrabajo(data);
         if (message === 'Actividad creada'.toUpperCase()) {
@@ -132,6 +141,8 @@ class UI {
         this.clearFormIngreso();
     }
 
+    // Método que ejecuta el método para obtener los datos de la clase TrabajoService 
+    // Con el fin de actualizar un elemento
     async updateTrabajos(data) {
         const message = await trabajoService.putTrabajo(data);
         if (message === 'Datos actualizados'.toUpperCase()) {
@@ -142,6 +153,8 @@ class UI {
         this.clearFormEditar();
     }
 
+    // Método que ejecuta el método para obtener los datos de la clase TrabajoService 
+    // Con el fin de eliminar un elemento
     async deleteTrabajos(cod_trabajo) {
         const message = await trabajoService.deleteTrabajo(cod_trabajo);
         if (message === 'Dato eliminado'.toUpperCase()) {
@@ -151,6 +164,7 @@ class UI {
         }
     }
 
+    // Método para renderizar un mensaje al usuario al momento de hacer una acción
     renderMessage(message, colorMessage) {
         const div = document.createElement('div');
         div.className = `alert alert-${colorMessage} message text-center`;
@@ -166,19 +180,23 @@ class UI {
         }, 3000)
     }
 
+    // Método para limpiar el formulario de Registro
     clearFormIngreso() {
         document.getElementById('ForRegistro').reset();
     }
 
+    // Método para limpiar el formulario de Consulta
     clearFormConsultar() {
         document.getElementById('ForConsultar').reset();
     }
 
+    // Método para limpiar el formulario de Edición
     clearFormEditar() {
         document.getElementById('ForConsultaId').reset();
         document.getElementById('ForEditar').reset();
     }
 
+    // Método para limpiar el formulario de Eliminación
     clearFormEliminar() {
         document.getElementById('ForEliminar').reset();
     }
