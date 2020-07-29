@@ -12,6 +12,7 @@ const sequelize = new Sequelize(process.env.POSTGRES_URI, {
     logging: false
 })
 
+// Validación si se ha realizado la conexión correctamente
 sequelize.authenticate()
     .then(() => console.log('Conexión establecida'))
     .catch((err) => console.error('Ha ocurrido un error al conectar a la base de datos:', err));
