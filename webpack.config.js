@@ -44,19 +44,19 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             filename: 'registro.html',
-            template: './frontend/views/registro.html'
+            template: './frontend/views/ForRegistro.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'consulta.html',
-            template: './frontend/views/consulta.html'
+            template: './frontend/views/ForConsultar.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'edicion.html',
-            template: './frontend/views/edicion.html'
+            template: './frontend/views/ForEditar.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'eliminacion.html',
-            template: './frontend/views/eliminacion.html'
+            template: './frontend/views/ForEliminar.html'
         }),
 
         new MiniCssExtractPlugin({
