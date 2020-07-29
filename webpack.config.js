@@ -43,19 +43,19 @@ module.exports = {
             template: './frontend/views/index.html'
         }),
         new HtmlWebpackPlugin({
-            filename: 'registro.html',
+            filename: 'ForRegistro.html',
             template: './frontend/views/ForRegistro.html'
         }),
         new HtmlWebpackPlugin({
-            filename: 'consulta.html',
+            filename: 'ForConsultar.html',
             template: './frontend/views/ForConsultar.html'
         }),
         new HtmlWebpackPlugin({
-            filename: 'edicion.html',
+            filename: 'ForEditar.html',
             template: './frontend/views/ForEditar.html'
         }),
         new HtmlWebpackPlugin({
-            filename: 'eliminacion.html',
+            filename: 'ForEliminar.html',
             template: './frontend/views/ForEliminar.html'
         }),
 
