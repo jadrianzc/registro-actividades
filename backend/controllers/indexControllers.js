@@ -1,7 +1,7 @@
 const indexCtrl = {};
 const TMAETRACAL = require('../models/actividades');
 
-// Renderiza ruta inicial
+// Obtiene todos lod datos que se encuentren en la base de datos
 indexCtrl.getTrabajo = async(req, res) => {
     try {
         const data = await TMAETRACAL.findAll();
@@ -20,6 +20,7 @@ indexCtrl.getTrabajo = async(req, res) => {
     }
 };
 
+// Obtiene sólo un dato por medio del código del trabajo o actividad (id)
 indexCtrl.getTrabajoOne = async(req, res) => {
     try {
         const data = await TMAETRACAL.findOne({
@@ -41,6 +42,7 @@ indexCtrl.getTrabajoOne = async(req, res) => {
     }
 }
 
+// Inserta o crea una nueva actividad
 indexCtrl.createTrabajo = async(req, res) => {
     const { mat_trabajo, prof_trabajo, act_trabajo, des_trabajo, fei_trabajo, fec_trabajo, cur_trabajo } = req.body;
 
@@ -72,6 +74,7 @@ indexCtrl.createTrabajo = async(req, res) => {
     }
 }
 
+// Elimina una actividad o trabajo
 indexCtrl.deleteTrabajo = async(req, res) => {
     try {
         const data = await TMAETRACAL.destroy({
@@ -94,6 +97,7 @@ indexCtrl.deleteTrabajo = async(req, res) => {
     }
 }
 
+// Actualiza un trabajo o actividad, para ello se obtiene el dato por medio del código de trabajo (id)
 indexCtrl.updateTrabajo = async(req, res) => {
     const { cod_trabajo, mat_trabajo, prof_trabajo, act_trabajo, des_trabajo, fei_trabajo, fec_trabajo, cur_trabajo } = req.body;
 
