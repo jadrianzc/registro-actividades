@@ -4,6 +4,7 @@
 }
 
 body {
+    font-family: 'Open Sans', sans-serif;
     background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     background-position: center center;
     background-size: cover;
@@ -11,7 +12,7 @@ body {
 }
 
 .index-menu {
-    background-image: url('/img/WelcomeSW.png');
+    background-image: url(img/WelcomeSW-BG.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -128,6 +129,113 @@ body {
     }
     .section-menu .toggle-btn span:hover {
         cursor: pointer;
+    }
+}
+
+.contenedor {
+    /* background-color: #fdfbfb; */
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.61);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.61);
+    width: auto;
+    height: auto;
+    margin: 50px 100px 0px 250px;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.contenedor .title h1 {
+    font-family: 'Ranchers', cursive;
+    text-align: center;
+    font-size: 120px;
+    font-weight: bolder;
+    text-shadow: 10px 12px 0 #41330a;
+}
+
+.contenedor .body h3 {
+    text-transform: uppercase;
+    color: #4B4A4A;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.contenedor .body {
+    width: 60%;
+    text-align: left;
+    color: #000;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.body i {
+    color: #12c220;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.body-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    height: 80%;
+}
+
+.body-contenido p {
+    font-style: oblique;
+}
+
+.contenido {
+    width: auto;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenido .img {
+    width: 40%;
+    height: 500px;
+    background-image: url(img/SW.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    align-self: flex-end;
+}
+
+@media (max-width: 1550px) {
+    .body-contenido {
+        display: none;
+    }
+    .contenido {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contenedor .body {
+        width: 100%;
+    }
+    .contenido .img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 790px) {
+    .contenedor {
+        margin: 0;
+    }
+    .body-contenido {
+        display: none;
+    }
+    .contenido {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contenedor .body {
+        width: 100%;
+    }
+    .contenido .img {
+        width: 100%;
     }
 }
 

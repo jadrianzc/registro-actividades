@@ -1,5 +1,6 @@
 require('../style/style.css');
-require('../img/WelcomeSW.png');
+require('../img/WelcomeSW-BG.png');
+require('../img/SW.png');
 require('../img/task.png');
 const UI = require('../UI');
 
