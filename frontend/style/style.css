@@ -12,7 +12,7 @@ body {
 }
 
 .index-menu {
-    background-image: url(../img/WelcomeSW-BG.png);
+    background-image: url('/backend/public/img/WelcomeSW-BG.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -197,7 +197,7 @@ body {
 .contenido .img {
     width: 40%;
     height: 500px;
-    background-image: url('../img/SW.png');
+    background-image: url('/backend/public/img/SW.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
