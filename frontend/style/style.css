@@ -221,6 +221,9 @@ body {
 }
 
 @media (max-width: 790px) {
+    .container h1 {
+        font-size: 25px;
+    }
     .contenedor {
         margin: 0;
     }
