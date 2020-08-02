@@ -224,15 +224,22 @@ body {
     .contenedor {
         margin: 0;
     }
+    .contenedor .title h1 {
+        font-size: 100px;
+    }
     .body-contenido {
         display: none;
     }
     .contenido {
+        height: 400px;
         flex-direction: column;
         justify-content: center;
     }
     .contenedor .body {
         width: 100%;
+    }
+    .contenido .body h3 {
+        font-size: 25px;
     }
     .contenido .img {
         width: 100%;
