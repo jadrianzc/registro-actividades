@@ -231,7 +231,7 @@ body {
         display: none;
     }
     .contenido {
-        height: 350px;
+        height: 300px;
         flex-direction: column;
         justify-content: center;
     }
