@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 // Iniciando la conexión a la base de datos por medio de variables de entorno
-const sequelize = new Sequelize(process.env.POSTGRES_URI, {
+/* const sequelize = new Sequelize(process.env.POSTGRES_URI, {
     dialect: 'postgres',
     pool: {
         max: 5,
@@ -10,7 +10,17 @@ const sequelize = new Sequelize(process.env.POSTGRES_URI, {
         idle: 10000
     },
     logging: false
-})
+}) */
+
+const sequelize = new Sequelize('sistemaBancario', 'sa', 'jazc99', {
+    host: 'localhost',
+    dialect: 'mssql',
+    dialectOptions: {
+        encrypt: true,
+        instanceName: 'MSSQLSERVER',
+        trustedConnection: true
+    }
+  });
 
 // Validación si se ha realizado la conexión correctamente
 sequelize.authenticate()
