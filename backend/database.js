@@ -12,12 +12,12 @@ const Sequelize = require('sequelize');
     logging: false
 }) */
 
-const sequelize = new Sequelize('registroNotas', 'sa', 'jazc99', {
-    host: 'JAZC003',
+const sequelize = new Sequelize('replica', 'sa', '123456', {
+    host: 'YAPP002',
     dialect: 'mssql',
     dialectOptions: {
         encrypt: true,
-        instanceName: 'SQL_WAKANDA',
+        instanceName: 'MSSQLSERVER',
         trustedConnection: true
     }
   });
