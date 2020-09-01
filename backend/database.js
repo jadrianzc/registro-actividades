@@ -12,12 +12,12 @@ const Sequelize = require('sequelize');
     logging: false
 }) */
 
-const sequelize = new Sequelize('sistemaBancario', 'sa', 'jazc99', {
-    host: 'localhost',
+const sequelize = new Sequelize('registroNotas', 'sa', 'jazc99', {
+    host: 'JAZC003',
     dialect: 'mssql',
     dialectOptions: {
         encrypt: true,
-        instanceName: 'MSSQLSERVER',
+        instanceName: 'SQL_WAKANDA',
         trustedConnection: true
     }
   });

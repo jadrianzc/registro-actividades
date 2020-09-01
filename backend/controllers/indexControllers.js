@@ -45,7 +45,7 @@ indexCtrl.getTrabajoOne = async(req, res) => {
 // Inserta o crea una nueva actividad
 indexCtrl.createTrabajo = async(req, res) => {
     const { mat_trabajo, prof_trabajo, act_trabajo, des_trabajo, fei_trabajo, fec_trabajo, cur_trabajo } = req.body;
-
+    
     try {
         const data = await TMAETRACAL.create({
             mat_trabajo,
@@ -58,6 +58,7 @@ indexCtrl.createTrabajo = async(req, res) => {
         }, {
             fields: ['mat_trabajo', 'prof_trabajo', 'act_trabajo', 'des_trabajo', 'fei_trabajo', 'fec_trabajo', 'cur_trabajo']
         })
+        console.log(data);
         if (data) {
             return res.json({
                 message: 'Actividad creada',
