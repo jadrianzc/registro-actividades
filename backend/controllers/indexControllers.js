@@ -1,5 +1,8 @@
 const indexCtrl = {};
 const TMAETRACAL = require('../models/actividades');
+const sql = require('mssql');
+
+
 
 // Obtiene todos los datos que se encuentren en la base de datos
 indexCtrl.getTrabajo = async(req, res) => {
@@ -48,7 +51,7 @@ indexCtrl.createTrabajo = async(req, res) => {
     
     function makeid(length) {
         var result           = '';
-        var characters       = 'ABCDE0123456789';
+        var characters       = 'ABCD0123456789';
         var charactersLength = characters.length;
         for ( var i = 0; i < length; i++ ) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -63,9 +66,20 @@ indexCtrl.createTrabajo = async(req, res) => {
     let five = makeid(12);
     
     let rowguid = `${first}-${second}-${third}-${four}-${five}`;
+    console.log(rowguid);
+
+    const config = {
+        user: 'sa',
+        password: '123456',
+        server: 'YAPP002\\MSSQLSERVER',
+        database: 'replica',
+        port: 1433
+    }
+    
+    
 
     try {
-        const data = await TMAETRACAL.create({
+        /* const data = await TMAETRACAL.create({
             mat_trabajo,
             prof_trabajo,
             act_trabajo,
@@ -76,8 +90,27 @@ indexCtrl.createTrabajo = async(req, res) => {
             rowguid
         }, {
             fields: ['mat_trabajo', 'prof_trabajo', 'act_trabajo', 'des_trabajo', 'fei_trabajo', 'fec_trabajo', 'cur_trabajo', 'rowguid']
+        }) */
+        const data = await sql.connect(config, (e) => {
+            if (e) console.log(e);
+            
+            let sqlRequest = new sql.Request();
+            
+            let sqlQuery = `INSERT INTO TMAETRACAL(Mat_Trabajo, Prof_Trabajo, Act_Trabajo,
+                Des_Trabajo, FeI_Trabajo, FeC_Trabajo, Cur_Trabajo) 
+                VALUES('${mat_trabajo}', '${prof_trabajo}', '${act_trabajo}', '${des_trabajo}', '${fei_trabajo}', '${fec_trabajo}', '${cur_trabajo}')`
+                
+            sqlRequest.query(sqlQuery, (e, data) => {
+                if (e) {
+                    console.log(e);
+                } else {
+                    console.log(data);
+                }
+
+                sql.close();
+            })
         })
-        console.log(data);
+        
         if (data) {
             return res.json({
                 message: 'Actividad creada',
