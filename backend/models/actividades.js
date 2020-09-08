@@ -28,8 +28,7 @@ const TMAETRACAL = sequelize.define('tmaetracal', {
         type: DataTypes.STRING
     },
     rowguid: {
-        type: 'UNIQUEIDENTIFIER',
-        defaultValue: DataTypes.UUIDV4
+        type: 'UNIQUEIDENTIFIER'
     }
 }, {
     freezeTableName: true,

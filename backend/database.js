@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 // Iniciando la conexión a la base de datos por medio de variables de entorno
 /* const sequelize = new Sequelize(process.env.POSTGRES_URI, {
-    dialect: 'postgres',
+    dialect: 'mssql',
     pool: {
         max: 5,
         min: 0,
