@@ -76,8 +76,6 @@ indexCtrl.createTrabajo = async(req, res) => {
         port: 1433
     }
     
-    
-
     try {
         /* const data = await TMAETRACAL.create({
             mat_trabajo,
