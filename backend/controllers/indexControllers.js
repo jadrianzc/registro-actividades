@@ -1,6 +1,11 @@
 const indexCtrl = {};
 const TMAETRACAL = require('../models/actividades');
-const sql = require('mssql');
+
+
+
+
+
+
 
 // Obtiene todos los datos que se encuentren en la base de datos
 indexCtrl.getTrabajo = async(req, res) => {
@@ -46,7 +51,25 @@ indexCtrl.getTrabajoOne = async(req, res) => {
 // Inserta o crea una nueva actividad
 indexCtrl.createTrabajo = async(req, res) => {
     const { mat_trabajo, prof_trabajo, act_trabajo, des_trabajo, fei_trabajo, fec_trabajo, cur_trabajo } = req.body;
-    const rowguid = 'BAF439C1-7AEC-EA11-ADB1-080027A9F309';
+    
+    function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDE0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+    
+    let first = makeid(8);
+    let second = makeid(4);
+    let third = makeid(4);
+    let four = makeid(4);
+    let five = makeid(12);
+    
+    let rowguid = `${first}-${second}-${third}-${four}-${five}`;
+
     try {
         const data = await TMAETRACAL.create({
             mat_trabajo,
