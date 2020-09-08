@@ -48,16 +48,6 @@ indexCtrl.createTrabajo = async(req, res) => {
     const { mat_trabajo, prof_trabajo, act_trabajo, des_trabajo, fei_trabajo, fec_trabajo, cur_trabajo } = req.body;
     const rowguid = 'BAF439C1-7AEC-EA11-ADB1-080027A9F309';
     try {
-        /* await sql.connect('mssql://sa:123456@YAPP002/replica')
-        sql.query`INSER INTO [TMAETRACAL] VALUES(
-            '${mat_trabajo}', 
-            '${prof_trabajo}', 
-            '${act_trabajo}', 
-            '${des_trabajo}',
-            '${fei_trabajo}',
-            '${fec_trabajo}',
-            '${cur_trabajo}'
-        )` */
         const data = await TMAETRACAL.create({
             mat_trabajo,
             prof_trabajo,
