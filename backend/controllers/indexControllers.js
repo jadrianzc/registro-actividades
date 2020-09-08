@@ -1,12 +1,6 @@
 const indexCtrl = {};
 const TMAETRACAL = require('../models/actividades');
 
-
-
-
-
-
-
 // Obtiene todos los datos que se encuentren en la base de datos
 indexCtrl.getTrabajo = async(req, res) => {
     try {
