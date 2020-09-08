@@ -102,9 +102,8 @@ indexCtrl.createTrabajo = async(req, res) => {
                 if (e) {
                     console.log(e);
                 } else {
-                    console.log(data);
+                    console.log('Registro insertado correctamente');
                 }
-
                 sql.close();
             })
         })
